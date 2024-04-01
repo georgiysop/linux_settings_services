@@ -25,6 +25,15 @@ nameserver 8.8.8.8
 nameserver 8.8.4.4
 "
 
+ping 8.8.8.8
+ping google.com
+
 sudo apt update
 sudo apt install net-tools
 sudo apt install ifconfig
+sudo apt install snmpwalk
+
+sudo apt install openssh-server
+sudo service ssh start
+sudo service ssh status
+sudo ufw allow ssh //разрешаем трафик через брэндмауэр 
