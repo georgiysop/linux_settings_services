@@ -1,5 +1,6 @@
 Ubuntu 23.04
 
+ip a
 sudo nano /etc/netplan/.yaml
 
 "
