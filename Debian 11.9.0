@@ -1,20 +1,48 @@
+//настройка ip и интерфесов
+
 //смотрим название интерфейса (обычно ens192) 
 ip addr
 
+//поменяем настройки сети в файле
+nano /etc/network/interfaces
+
+//файл имеет вид
+
+
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+allow-hotplug ens192
+#iface ens192 inet dhcp
+auto ens192
+iface ens192 inet static
+address 192.168.0.6
+netmask 255.255.255.0
+gateway 192.168.0.1
+
+
+
+//создадим и поменяем в файле
 nano /etc/resolv.conf 
-//вводим днс 
+
+//файл имеет вид
 nameserver 8.8.8.8
 
 //перезапускаем инет
 systemctl restart networking
 
+
 //пингуем домены сеточку и радуемся жизни
 
 
-
 ___________________________________________________________________________________
-
-
 //настройка ssh
 
 
@@ -38,6 +66,13 @@ apt update
 
 apt install ssh
 apt install docker-compose
+
+
+
+
+
+//настройка scp 
+
 
 _____________________________________________________________________________________
 
