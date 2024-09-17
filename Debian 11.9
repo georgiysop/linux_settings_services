@@ -1,0 +1,54 @@
+//смотрим название интерфейса (обычно ens192) 
+ip addr
+
+nano /etc/resolv.conf 
+//вводим днс 
+nameserver 8.8.8.8
+
+//перезапускаем инет
+systemctl restart networking
+
+//пингуем домены сеточку и радуемся жизни
+
+
+
+___________________________________________________________________________________
+
+
+//настройка ssh
+
+
+nano /etc/apt/source.list
+// вводим основные пакеты
+
+deb http://deb.debian.org/debian/ bullseye main
+deb-src http://deb.debian.org/debian/ bullseye main
+
+deb http://security.debian.org/debian-security bullseye-security main
+deb-src http://security.debian.org/debian-security bullseye-security main
+
+deb http://deb.debian.org/debian/ bullseye-updates main
+deb-src http://deb.debian.org/debian/ bullseye-updates main
+
+
+//обновляем пакеты
+apt update
+
+//устанавливаем нужные пакетики
+
+apt install ssh
+apt install docker-compose
+
+_____________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
