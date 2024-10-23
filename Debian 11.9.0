@@ -66,12 +66,19 @@ apt update
 
 apt install ssh
 apt install docker-compose
+apt-get install ufw
 
 
 
 
 
-//настройка scp 
+
+
+
+
+
+
+//настройка scp  (не полностью)
 
 //генерируем ключи ssh для удаленного подключения( по умолчанию  они находяться /root/.ssh или /home/user/.ssh )
  ssh-keygen -t rsa
