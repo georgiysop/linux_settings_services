@@ -1,1 +1,38 @@
+...
+тут установка
+_________________________________
 
+//Пытаемся перезапустить asterisk
+//зайдем в cli asterisk
+
+asterisk -r
+//запустим перезапуск
+reload
+
+//выпадет лярд ошибок (самые главные, кот. надо фиксануть ERROR)
+[Oct 23 02:20:12] WARNING[799]: res_config_pgsql.c:1444 parse_config: PostgreSQL RealTime: Not connected
+[Oct 23 02:20:12] NOTICE[799]: res_config_ldap.c:1832 parse_config: No directory user found, anonymous binding as default.
+[Oct 23 02:20:12] ERROR[799]: res_config_ldap.c:1858 parse_config: No directory URL or host found.
+[Oct 23 02:20:12] NOTICE[799]: res_config_ldap.c:1776 reload: Cannot reload LDAP RealTime driver.
+[Oct 23 02:20:12] NOTICE[799]: sorcery.c:1348 sorcery_object_load: Type 'system' is not reloadable, maintaining previous values
+[Oct 23 02:20:12] NOTICE[799]: cdr.c:4585 cdr_toggle_runtime_options: CDR simple logging enabled.
+[Oct 23 02:20:12] NOTICE[802]: sorcery.c:1348 sorcery_object_load: Type 'system' is not reloadable, maintaining previous values
+[Oct 23 02:20:12] WARNING[799]: res_phoneprov.c:1249 get_defaults: Unable to find a valid server address or name.
+[Oct 23 02:20:12] NOTICE[799]: chan_skinny.c:8474 config_load: Configuring skinny from skinny.conf
+[Oct 23 02:20:12] ERROR[799]: ari/config.c:312 process_config: No configured users for ARI
+[Oct 23 02:20:12] NOTICE[799]: cel_custom.c:92 load_config: No mappings found in cel_custom.conf. Not logging CEL to cus tom CSVs.
+[Oct 23 02:20:12] NOTICE[799]: app_queue.c:9615 reload_queue_rules: queuerules.conf has not changed since it was last lo aded. Not taking any action.
+
+//самое главное не менять hostname, то появятся больше ERROR
+
+//сипа как команды не будет. проверим, вводим в cli:
+sip show peers
+No such command 'sip show peers' (type 'core show help sip show' for other possible commands)
+//также
+sip show registery
+No such command 'sip show registery' (type 'core show help sip show registery' for other possible commands)
+
+//запустим в cli
+module load chan_sip.so
+
+//через время команды появятся
