@@ -63,10 +63,10 @@ deb-src http://deb.debian.org/debian/ bullseye-updates main
 apt update
 
 //устанавливаем нужные пакетики
-
 apt install ssh
 apt install docker-compose
 apt-get install ufw
+apt install apache2
 
 
 
