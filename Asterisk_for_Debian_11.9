@@ -35,7 +35,14 @@ No such command 'sip show registery' (type 'core show help sip show registery' f
 //показывает какие модули стоят на asterisk
 core show channeltypes
 
+
 //запустим в cli
 module load chan_sip.so
+//теперь команды связанные с SIP появятся
 
-//через время команды появятся
+//чтобы постоянно не запускать эту команду на SIP, в файле /etc/asterisk/modules.conf комментим следующее:
+;
+; Do not load chan_sip by default, it may conflict with res_pjsip.
+;noload = chan_sip.so
+;
+
