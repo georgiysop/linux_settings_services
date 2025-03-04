@@ -17,3 +17,8 @@ dnf check-update
 dnf update
 dnf clean all
 dnf install nano vim wget curl net-tools lsof bash-completion
+
+
+#ссылки
+https://sidmid.ru/freeipa-debian-установка-интеграция-примеры/
+https://www.dmosk.ru/miniinstruktions.php?mini=freeipa-centos
