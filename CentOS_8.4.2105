@@ -1,0 +1,19 @@
+#Зеркала для установки:
+https://mirror.yandex.ru/centos/centos/8/BaseOS/x86_64/os/
+
+#Настройка сети
+nano /etc/sysconfig/network-scripts/ifcfg-ens192
+
+#Настройка днс
+nano /etc/resolv.conf
+
+#При возникновении ошибки установки
+#Couldn't resolve host name for http://mirrorlist.centos.org/?release=8-stream&arch=x86_64&repo=AppStream&infra=stock [Could not resolve host: mirrorlist.centos.org]  ....
+#Обновляем метаданные Centos 8.
+cd /etc/yum.repos.d/
+sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+dnf check-update
+dnf update
+dnf clean all
+dnf install nano vim wget curl net-tools lsof bash-completion
